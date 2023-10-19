@@ -25,7 +25,7 @@ const SendMessage = (event) => {
   };
 
   const doSendMessage = async () => {
-    if (location.pathname.includes("/chanel/")) {
+    if (location.pathname.includes("/channel/")) {
       const generalId = location.pathname.split("/")[2];
       // Use generalId as needed
       await sendMessageGeneral(generalId, message);

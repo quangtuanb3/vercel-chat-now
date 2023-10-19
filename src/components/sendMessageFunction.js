@@ -7,7 +7,7 @@ export const sendMessageGeneral = async (generalId, message = "", imageUrls = []
         return;
     }
     const { uid, displayName, photoURL } = auth.currentUser;
-    await addDoc(collection(db, `chanel-${generalId}`), {
+    await addDoc(collection(db, `channel-${generalId}`), {
         text: message || "",
         name: displayName,
         avatar: photoURL,

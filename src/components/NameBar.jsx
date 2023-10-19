@@ -11,8 +11,8 @@ export const NameBar = ({ recipient }) => {
     const { recipientUid } = useParams();
     let recipientName = '...';
 
-    if (location.pathname.includes("/chanel/")) {
-        recipientName = recipientUid;
+    if (location.pathname.includes("/channel/")) {
+        recipientName = location.pathname.split("/")[2].toUpperCase();
         // Use generalId as needed
     } else if (location.pathname.includes("/direct-message/")) {
         recipient = users.find((user) => user.uid === recipientUid);
@@ -22,11 +22,11 @@ export const NameBar = ({ recipient }) => {
     return (
         <div className="nameBar">
             <img
-                src={recipient?.photo || G_icon}
+                src={recipient?.photoURL || G_icon}
                 style={{ marginRight: "10px", width: 40, height: 40, borderRadius: "50%" }} // Adjust the margin as needed
             >
             </img>
-            <span style={{ display: "inline-block" }}>{recipient?.displayName || recipientName}</span>
+            <span style={{ display: "inline-block", fontWeight: "600", letterSpacing: "3px", color: "#160640" }}>{recipient?.displayName || recipientName}</span>
 
         </div>
     )

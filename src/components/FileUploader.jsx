@@ -73,7 +73,7 @@ const FileUploader = ({ open, handleClose }) => {
   useEffect(() => {
     const handleImageUpload = async () => {
       if (imageUrls.length > 0) {
-        if (location.pathname.includes("/chanel/")) {
+        if (location.pathname.includes("/channel/")) {
           const generalId = location.pathname.split("/")[2];
           // Use generalId as needed
           await sendMessageGeneral(generalId, "", imageUrls);

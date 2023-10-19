@@ -19,7 +19,7 @@ function App() {
                 <Sidebar />
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/chanel/:id" element={<General />} />
+                    <Route path="/channel/:id" element={<General />} />
                     <Route path="/direct-message/:recipientUid" element={<DirectPage />} />
                 </Routes>
             </Router>

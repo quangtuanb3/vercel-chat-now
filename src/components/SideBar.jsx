@@ -61,13 +61,13 @@ const Sidebar = () => {
                     {isChannelOpen && (
                         <ul onClick={(e) => e.stopPropagation()} style={{ marginTop: 5, borderTop: "3px solid blue" }}>
 
-                            <Link to="/chanel/general" className="sign-in" style={{ textDecoration: "none" }}>
+                            <Link to="/channel/general" className="sign-in" style={{ textDecoration: "none" }}>
                                 <li
                                     className={activeItem === 'general' ? 'active' : ''}
                                     onClick={() => handleItemClick('general')}
                                 > #General </li></Link>
 
-                            <Link to="/chanel/random" className="sign-in" style={{ textDecoration: "none" }}>
+                            <Link to="/channel/random" className="sign-in" style={{ textDecoration: "none" }}>
                                 <li
                                     className={activeItem === 'random' ? 'active' : ''}
                                     onClick={() => handleItemClick('random')}
