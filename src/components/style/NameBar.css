@@ -1,0 +1,10 @@
+.nameBar {
+    padding: 10px 20px;
+    width: 100%;
+    background-color: rgba(110, 110, 213, 0.589);
+    z-index: 500;
+    left: 20%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+}

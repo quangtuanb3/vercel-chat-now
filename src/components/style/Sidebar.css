@@ -1,0 +1,66 @@
+.sidebar {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #85007e;
+  overflow-x: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.sidebar h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar form {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar li:last-child {
+  border-bottom: none;
+}
+
+.sidebar button {
+  margin-top: auto;
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+button {
+  border-radius: 5px !important;
+}
+
+.active {
+ color: rgb(255, 223, 78);
+}
+
+ul a {
+  color: white;
+}
