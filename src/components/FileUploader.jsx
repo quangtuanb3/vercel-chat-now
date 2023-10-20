@@ -79,7 +79,7 @@ const FileUploader = ({ open, handleClose }) => {
           await sendMessageGeneral(generalId, "", imageUrls);
         } else if (location.pathname.includes("/direct-message/")) {
           // Use id from useParams
-          sendMessageToUser(recipientUid, "", imageUrls);
+          sendMessageToUser(location.pathname.split("/")[2], "", imageUrls);
         }
 
         // sendMessageFunction("", imageUrls)
@@ -96,9 +96,10 @@ const FileUploader = ({ open, handleClose }) => {
 
 
   const handleClickUpload = async () => {
+
     console.log("selectedFiles, ", selectedFiles)
     await handleUpload(selectedFiles);
-    sendMessageFunction("", imageUrls)
+    // sendMessageGeneral("", imageUrls)
     handleCloseModal();
 
   };

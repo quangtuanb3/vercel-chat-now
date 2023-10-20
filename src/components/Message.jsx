@@ -4,9 +4,20 @@ import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import FsLightbox from "fslightbox-react";
+import { useState } from "react";
 
 const Message = ({ message }) => {
   const messageRef = useRef();
+
+  // const [toggler, setToggler] = useState(false);
+  // const [selectedImage, setSelectedImage] = useState(null);
+
+  // const openLightbox = (index) => {
+  //   setSelectedImage(index);
+  //   setToggler(true);
+  // };
+
 
   useEffect(() => {
     if (messageRef.current) {
@@ -14,7 +25,6 @@ const Message = ({ message }) => {
     }
   }, [message]);
 
-  console.log(message)
   const [user] = useAuthState(auth);
   return (
     <div className={`chat-bubble ${message.uid === user.uid ? "right" : ""}`}>
@@ -34,7 +44,9 @@ const Message = ({ message }) => {
               rowHeight={100}
             >
               {message.imgs.map((url, index) => (
-                <ImageListItem key={index} style={{ position: 'relative' }}>
+                <ImageListItem key={index} style={{ position: 'relative' }}
+                // onClick={() => openLightbox(index)}
+                >
                   <img
                     srcSet={url}
                     src={url}
@@ -49,7 +61,14 @@ const Message = ({ message }) => {
                   />
                 </ImageListItem>
               ))}
+
             </ImageList>
+            {/* <FsLightbox
+                toggler={toggler}
+                sources={message.imgs.map(url => ({ source: url }))}
+              // sourceIndex={selectedImage}
+              /> */}
+
           </div>
         )}
       </div>

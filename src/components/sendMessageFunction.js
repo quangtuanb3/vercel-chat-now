@@ -3,7 +3,10 @@ import { auth, db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 export const sendMessageGeneral = async (generalId, message = "", imageUrls = []) => {
+    console.log("imageUrls send img to general: ", imageUrls)
+    console.log("generalId ", generalId, "message ", message)
     if (!message.trim() && imageUrls.length === 0) {
+        console.log("return")
         return;
     }
     const { uid, displayName, photoURL } = auth.currentUser;

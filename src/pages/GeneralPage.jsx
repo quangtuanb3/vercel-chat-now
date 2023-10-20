@@ -17,7 +17,7 @@ const General = () => {
 
     useEffect(() => {
         const q = query(
-            collection(db, `general-${id}`),
+            collection(db, `channel-${id}`),
             orderBy("createdAt", "desc"),
             limit(50)
         );
@@ -33,7 +33,7 @@ const General = () => {
             setMessages(sortedMessages);
         });
         return () => unsubscribe;
-    }, []);
+    }, [messages]);
 
     return (
         <main className="chat-box">

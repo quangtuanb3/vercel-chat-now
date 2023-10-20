@@ -12,6 +12,7 @@ import {
 } from "firebase/firestore";
 import { useUserContext } from "../helper/UserContext";
 import { useParams } from "react-router-dom";
+import { ImageList, ImageListItem } from "@mui/material";
 
 const RecipientComponent = () => {
     let { recipientUid } = useParams();
@@ -78,9 +79,8 @@ const RecipientComponent = () => {
                     <p>Loading...</p>
                 ) : (messages.map((message, index) => {
                     return (
-                        <>
-                            
-                            {user && <div key={index} className={`chat-bubble ${message.senderUid === user?.uid ? "right" : ""}`}>
+                        <div key={index}>
+                            {user && <div className={`chat-bubble ${message.senderUid === user?.uid ? "right" : ""}`}>
                                 <img className="chat-bubble__left" src={message.avatar} alt="user avatar" />
                                 <div className="chat-bubble__right">
                                     <p className="user-name">{message.name}</p>
@@ -117,7 +117,7 @@ const RecipientComponent = () => {
                                     )}
                                 </div>
                             </div>}
-                        </>
+                        </div>
 
                     )
 

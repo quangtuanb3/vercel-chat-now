@@ -52,7 +52,7 @@ const Sidebar = () => {
 
     return (
         <div className="sidebar">
-            <h1>Chat App</h1>
+            <h1>Chat Now</h1>
             <form>
                 {/* Your search form here */}
             </form>

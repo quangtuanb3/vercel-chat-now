@@ -13,6 +13,7 @@ const fetchMessages = async (senderUid, recipientUid) => {
       querySnapshot.forEach((doc) => {
         messages.push({ id: doc.id, ...doc.data() });
       });
+      messages.sort((a, b) => a.createdAt - b.createdAt);
     }
   } catch (error) {
     console.error("Error fetching messages: ", error);
