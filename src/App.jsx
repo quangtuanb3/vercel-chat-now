@@ -18,9 +18,9 @@ function App() {
             <Router>
                 <Sidebar />
                 <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/channel/:id" element={<General />} />
-                    <Route path="/direct-message/:recipientUid" element={<DirectPage />} />
+                    <Route path="/chat-now/" element={<HomePage />} />
+                    <Route path="/chat-now/channel/:id" element={<General />} />
+                    <Route path="/chat-now/direct-message/:recipientUid" element={<DirectPage />} />
                 </Routes>
             </Router>
         </UserProvider>

@@ -1,7 +1,7 @@
 {
-  "name": "chat-app",
+  "name": "chat-now",
   "private": true,
-  "homepage": "https://quangtuanb3.github.io/chat-app",
+  "homepage": "https://quangtuanb3.github.io/chat-now",
   "version": "0.1.0",
   "type": "module",
   "scripts": {
