@@ -21,13 +21,13 @@ const Sidebar = () => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
-                console.log("auth.currentUser : ", user);
+                // console.log("auth.currentUser : ", user);
             }
         });
 
     }
 
-    console.log("sidebar: ", user?.uid)
+    // console.log("sidebar: ", user?.uid)
 
     const googleSignIn = () => {
         const provider = new GoogleAuthProvider();

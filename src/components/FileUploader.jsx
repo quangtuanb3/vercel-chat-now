@@ -54,7 +54,7 @@ const FileUploader = ({ open, handleClose }) => {
       const updatedSelectedFiles = Array.from(selectedFiles).filter((_, i) => i !== index);
       setSelectedFiles(updatedSelectedFiles);
     }
-    console.log("selectedFiles ", selectedFiles)
+    // console.log("selectedFiles ", selectedFiles)
     if (selectedFiles.length <= 1) {
       setSelected(false);
       setImgsPreview([]);
@@ -63,7 +63,7 @@ const FileUploader = ({ open, handleClose }) => {
   }
   const handleCloseModal = () => {
     setImgsPreview([]);
-    console.log(imgsPreview)
+    // console.log(imgsPreview)
     setSelectedFiles([]);
     handleClose();
   };
@@ -85,7 +85,7 @@ const FileUploader = ({ open, handleClose }) => {
         // sendMessageFunction("", imageUrls)
 
         setImgsPreview([]);
-        console.log("imageUrls after handleciliupload", imageUrls);
+        // console.log("imageUrls after handleciliupload", imageUrls);
         setImageUrls([])
         setSelected(false)
       }
@@ -97,7 +97,7 @@ const FileUploader = ({ open, handleClose }) => {
 
   const handleClickUpload = async () => {
 
-    console.log("selectedFiles, ", selectedFiles)
+    // console.log("selectedFiles, ", selectedFiles)
     await handleUpload(selectedFiles);
     // sendMessageGeneral("", imageUrls)
     handleCloseModal();

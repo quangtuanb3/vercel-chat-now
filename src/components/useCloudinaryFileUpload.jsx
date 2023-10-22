@@ -27,15 +27,15 @@ const useCloudinaryFileUpload = () => {
                         'Content-Type': 'multipart/form-data',
                     },
                 });
-                newImageUrls.push(response.data.url);
-                console.log('Upload success', response.data.url);
+                newImageUrls.push(response.data.url.replace("http", "https"));
+                // console.log('Upload success', response.data.url);
             } catch (error) {
                 console.error('Upload failed', error);
             }
         }
 
         setImageUrls(newImageUrls);
-       
+
     };
     return { handleUpload, imageUrls, setImageUrls };
 

@@ -35,7 +35,7 @@ const RecipientComponent = () => {
     const [loading, setLoading] = useState(true);
     const messagesEndRef = useRef(null);
 
-    console.log(" recipientUid ", recipientUid)
+    // console.log(" recipientUid ", recipientUid)
 
     useEffect(() => {
         // setUser(currentUser);
