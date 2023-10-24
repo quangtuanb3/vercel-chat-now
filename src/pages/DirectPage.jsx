@@ -37,7 +37,7 @@ const DirectPage = () => {
             setMessages(sortedMessages);
         });
         return () => unsubscribe;
-    }, []);
+    }, [messages]);
 
     return (
         <main className="chat-box">
@@ -46,8 +46,8 @@ const DirectPage = () => {
                 <RecipientComponent />
             </div>
             {/* when a new message enters the chat, the screen scrolls down to the scroll div */}
-            <span ref={scroll}></span>
-            <SendMessage scroll={scroll} />
+            {/* <span ref={scroll}></span> */}
+            <SendMessage />
         </main>
     );
 };

@@ -41,7 +41,7 @@ const General = () => {
         });
         //clear sub
         return () => subscribe;
-    }, []);
+    }, [messages]);
 
     return (
         <main className="chat-box">

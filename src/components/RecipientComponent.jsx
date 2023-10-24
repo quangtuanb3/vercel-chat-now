@@ -19,18 +19,6 @@ const RecipientComponent = () => {
 
     const { user, setUser } = useUserContext();
 
-    // if (!user) {
-    //     const unsubscribe = onAuthStateChanged(auth, (user) => {
-    //         if (user) {
-    //             setUser(user);
-    //             console.log("auth.currentUser : ", user);
-    //         }
-    //     });
-
-    // }
-
-
-
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(true);
     const messagesEndRef = useRef(null);
