@@ -9,6 +9,7 @@ import { useLocation, useParams } from "react-router-dom";
 
 
 const SendMessage = (event) => {
+  
   const { setImageUrls } = useCloudinaryFileUpload();
   const [message, setMessage] = useState("");
   const [open, setOpen] = useState(false);

@@ -4,7 +4,7 @@ import { db } from "../firebase";
 const fetchMessages = async (senderUid, recipientUid) => {
 
   let collectionName = [senderUid, recipientUid].sort().join("_");
-  console.log(collectionName)
+  // console.log(collectionName)
   const messages = [];
   try {
     if (recipientUid) {

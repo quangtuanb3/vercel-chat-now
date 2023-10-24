@@ -14,7 +14,7 @@ const General = () => {
     const [messages, setMessages] = useState([]);
 
     const scroll = useRef();
-
+    // console.log(messages)
     useEffect(() => {
         const q = query(
             collection(db, `channel-${id}`),
@@ -22,18 +22,26 @@ const General = () => {
             limit(50)
         );
 
-        const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
+        // console.log(q)
+
+        const subscribe = onSnapshot(q, (QuerySnapshot) => {
             const fetchedMessages = [];
+            if (messages.length === QuerySnapshot.length) return;
             QuerySnapshot.forEach((doc) => {
                 fetchedMessages.push({ ...doc.data(), id: doc.id });
             });
             const sortedMessages = fetchedMessages.sort(
                 (a, b) => a.createdAt - b.createdAt
             );
-            setMessages(sortedMessages);
+            if (sortedMessages.length > 0 && sortedMessages[0].createdAt !== null) {
+                setMessages(sortedMessages)
+                scroll.current.scrollIntoView({ behavior: 'smooth' });
+            }
+
         });
-        return () => unsubscribe;
-    }, [messages]);
+        //clear sub
+        return () => subscribe;
+    }, []);
 
     return (
         <main className="chat-box">
@@ -42,10 +50,11 @@ const General = () => {
                 {messages?.map((message) => (
                     <Message key={message.id} message={message} />
                 ))}
+                <span ref={scroll}></span>
             </div>
             {/* when a new message enters the chat, the screen scrolls down to the scroll div */}
-            <span ref={scroll}></span>
-            <SendMessage scroll={scroll} />
+
+            <SendMessage />
         </main>
     );
 };
